@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:app="http://schemas.android.com/apk/res-auto"
+				xmlns:tools="http://schemas.android.com/tools"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+
+	<LinearLayout
+		android:id="@+id/directorypicker_dialog_navigation_container"
+		android:layout_width="match_parent"
+		android:layout_height="32dp"
+		android:layout_marginTop="16dp"
+		android:background="?attr/colorAccent"
+		android:elevation="4dp"
+		android:orientation="horizontal"
+		tools:targetApi="lollipop">
+
+		<ImageView
+			android:id="@+id/directorypicker_button_home"
+			android:layout_width="38dp"
+			android:layout_height="32dp"
+			android:layout_marginLeft="4dp"
+			android:background="?attr/selectableItemBackground"
+			android:clickable="true"
+			android:paddingEnd="4dp"
+			android:paddingStart="4dp"
+			android:scaleType="fitCenter"
+			app:srcCompat="@drawable/ic_home_text_primary"
+			/>
+
+		<TextView
+			android:id="@+id/directorypicker_text_dirpath"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:background="?attr/colorPrimary"
+			android:ellipsize="start"
+			android:gravity="center_vertical"
+			android:paddingEnd="4dp"
+			android:paddingStart="4dp"
+			android:singleLine="true"
+			android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
+			android:textColor="?android:attr/textColorPrimaryInverse"
+			tools:text="/root/src/dir/longdirname/herecomesdatboi"/>
+
+		<ImageView
+			android:id="@+id/directorypicker_button_up"
+			android:layout_width="38dp"
+			android:layout_height="32dp"
+			android:layout_marginRight="4dp"
+			android:background="?attr/selectableItemBackground"
+			android:clickable="true"
+			android:paddingEnd="4dp"
+			android:paddingStart="4dp"
+			android:scaleType="fitCenter"
+			app:srcCompat="@drawable/ic_undo_text_primary"/>
+
+	</LinearLayout>
+
+	<include
+		layout="@layout/directorypicker_recyclerview_empty"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_above="@+id/directorypicker_include_filedetails"
+		android:layout_below="@+id/directorypicker_dialog_navigation_container"/>
+
+	<android.support.v7.widget.RecyclerView
+		android:id="@+id/directorypicker_recycler_dir_content"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_above="@+id/directorypicker_include_filedetails"
+		android:layout_below="@+id/directorypicker_dialog_navigation_container"
+		android:background="?android:windowBackground"
+		android:clipToPadding="false"
+		android:paddingBottom="@dimen/directorypicker_newfolder_bar_height"
+		android:scrollbars="vertical"/>
+
+	<LinearLayout
+		android:id="@+id/directorypicker_layout_newfolderbar"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/directorypicker_newfolder_bar_height"
+		android:layout_alignBottom="@id/directorypicker_recycler_dir_content"
+		android:background="@drawable/background_topline"
+		android:orientation="horizontal"
+		android:translationY="@dimen/directorypicker_newfolder_bar_height"
+		android:visibility="gone"
+		tools:translationY="0dp"
+		tools:visibility="visible">
+
+
+		<include layout="@layout/directorypicker_dialog_newfolder"/>
+	</LinearLayout>
+
+	<include
+		android:id="@+id/directorypicker_include_filedetails"
+		layout="@layout/directorypicker_dialog_details"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:elevation="2dp"
+		tools:targetApi="lollipop"/>
+
+	<android.support.design.widget.FloatingActionButton
+		android:id="@+id/directorypicker_button_createfolder_fab"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_above="@+id/directorypicker_include_filedetails"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentRight="true"
+		app:fabSize="mini"
+		app:srcCompat="@drawable/ic_create_new_folder_24dp"
+		app:useCompatPadding="true"/>
+
+</RelativeLayout>

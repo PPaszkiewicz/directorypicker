@@ -1,0 +1,5 @@
+<resources>
+	<string name="app_name">DirectoryPicker</string>
+	<string name="edittext_newfolder">New folder</string>
+	<string name="button_createfolder">Create</string>
+</resources>

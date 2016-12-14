@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  xmlns:app="http://schemas.android.com/apk/res-auto"
+			  xmlns:tools="http://schemas.android.com/tools"
+			  android:layout_width="match_parent"
+			  android:layout_height="wrap_content"
+			  android:background="?attr/colorPrimary"
+			  android:gravity="center_vertical"
+			  android:minHeight="?android:attr/listPreferredItemHeightSmall"
+			  android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+			  android:paddingStart="12dp">
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="start|center_vertical"
+		android:orientation="horizontal"
+		android:paddingBottom="4dp"
+		android:paddingEnd="12dp"
+		android:paddingTop="4dp">
+
+		<ImageView
+			android:id="@+id/directorypicker_dialog_details_image"
+			android:layout_width="36dp"
+			android:layout_height="36dp"
+			android:scaleType="fitCenter"
+			tools:src="@drawable/ic_file_text_primary"/>
+	</LinearLayout>
+
+	<RelativeLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:paddingBottom="6dp"
+		android:paddingTop="6dp">
+
+		<TextView
+			android:id="@+id/directorypicker_dialog_details_text_primary"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:ellipsize="marquee"
+			android:singleLine="false"
+			android:textAppearance="@style/TextAppearance.AppCompat.Subhead.Inverse"
+			tools:text="Filename goes ehere"/>
+
+		<TextView
+			android:id="@+id/directorypicker_dialog_details_text_secondary"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignStart="@id/directorypicker_dialog_details_text_primary"
+			android:layout_below="@id/directorypicker_dialog_details_text_primary"
+			android:maxLines="10"
+			android:textAppearance="?android:attr/textAppearanceSmallInverse"
+			tools:text="Directory"/>
+	</RelativeLayout>
+
+	<ImageView
+		android:id="@+id/directorypicker_dialog_details_button_view"
+		style="@style/Widget.AppCompat.Button.Colored"
+		android:layout_width="48dp"
+		android:layout_height="48dp"
+		android:layout_gravity="center_vertical"
+		android:clickable="false"
+		android:visibility="invisible"
+		app:srcCompat="@drawable/ic_visibility"/>
+</LinearLayout>

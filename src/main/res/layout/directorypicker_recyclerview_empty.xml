@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			 xmlns:app="http://schemas.android.com/apk/res-auto"
+			 xmlns:tools="http://schemas.android.com/tools"
+			 android:id="@+id/directorypicker_recyclerview_emptylayout"
+			 android:layout_width="match_parent"
+			 android:layout_height="match_parent"
+			 android:background="?android:windowBackground">
+
+	<LinearLayout
+		android:id="@+id/directorypicker_layout_empty_deleteDir"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<ImageView
+				android:layout_width="64dp"
+				android:layout_height="64dp"
+				android:layout_gravity="center_vertical"
+				app:srcCompat="@drawable/ic_folder_primary_dark"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:text="Empty Folder"
+				android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"/>
+		</LinearLayout>
+
+		<Button
+			android:id="@+id/directorypicker_dialog_empty_deletedir"
+			style="@style/Base.Widget.AppCompat.Button.Colored"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:enabled="false"
+			android:text="Delete this"
+			tools:enabled="true"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/directorypicker_layout_empty_createDir"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:orientation="vertical"
+		tools:visibility="gone">
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<ImageView
+				android:layout_width="64dp"
+				android:layout_height="64dp"
+				android:layout_gravity="center_vertical"
+				app:srcCompat="@drawable/ic_folder_primary_dark"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:text="Missing Folder"
+				android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"/>
+		</LinearLayout>
+
+		<Button
+			android:id="@+id/directorypicker_dialog_empty_createDir"
+			style="@style/Base.Widget.AppCompat.Button.Colored"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:enabled="false"
+			android:text="Recreate this"/>
+	</LinearLayout>
+
+</FrameLayout>

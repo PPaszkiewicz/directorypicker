@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			 xmlns:tools="http://schemas.android.com/tools"
+			 android:id="@+id/directorypicker_recyclerview_root"
+			 android:layout_width="match_parent"
+			 android:layout_height="wrap_content"
+			 android:background="?attr/selectableItemBackground"
+			 android:clickable="true"
+			 android:focusable="true"
+			 android:gravity="center_vertical"
+			 android:minHeight="?android:attr/listPreferredItemHeightSmall">
+
+	<View
+		android:id="@+id/directorypicker_recyclerview_even_background"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:visibility="invisible"
+		tools:background="?attr/colorPrimary"/>
+
+	<View
+		android:id="@+id/directorypicker_recyclerview_selected_background"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:visibility="invisible"
+		tools:background="?attr/colorAccent"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+		android:paddingStart="12dp">
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="start|center_vertical"
+			android:orientation="horizontal"
+			android:paddingBottom="4dp"
+			android:paddingEnd="12dp"
+			android:paddingTop="4dp">
+
+			<ImageView
+				android:id="@+id/directorypicker_recyclerview_item_image"
+				android:layout_width="36dp"
+				android:layout_height="36dp"
+				android:scaleType="fitCenter"
+				tools:src="@drawable/ic_folder_primary_dark"/>
+		</LinearLayout>
+
+		<RelativeLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:paddingBottom="4dp"
+			android:paddingTop="4dp">
+
+			<TextView
+				android:id="@+id/directorypicker_recyclerview_item_text_primary"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:ellipsize="marquee"
+				android:singleLine="false"
+				android:text="Filename goes ehere"
+				android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+			<TextView
+				android:id="@+id/directorypicker_recyclerview_item_text_secondary"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignStart="@id/directorypicker_recyclerview_item_text_primary"
+				android:layout_below="@id/directorypicker_recyclerview_item_text_primary"
+				android:maxLines="10"
+				android:text="Directory"
+				android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+		</RelativeLayout>
+	</LinearLayout>
+</FrameLayout>
